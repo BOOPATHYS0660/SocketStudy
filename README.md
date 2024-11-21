@@ -1,8 +1,8 @@
 # Ex.No:2		  STUDY OF SOCKET PROGRAMMING AND CLIENT – SERVER MODE
-## Aim: 
+## AIM: 
 To implement socket programming date and time display from client to 
 server using TCP Sockets 
-## Algorithm : 
+## ALGORITHM : 
 ## Server: 
 1. Create a server socket and bind it to port. 
 2. Listen for new connection and when a connection arrives, accept it. 
@@ -21,7 +21,7 @@ server using TCP Sockets
 5. Close the input and output streams. 
 6. Close the client socket. 
 7. Stop.
-## Program
+## PROGRAM
 ## Client : 
 ```
 import socket
@@ -54,6 +54,6 @@ CLIENT:
 SERVER:
 ![Screenshot 2024-11-21 180835](https://github.com/user-attachments/assets/b55178a3-7e1f-4a92-b214-d3616787300e)
 
-## Result:
+## RESULT:
 Thus, the program to implement socket programming date and time display from client to 
 server using TCP Sockets was successfully executed. 
