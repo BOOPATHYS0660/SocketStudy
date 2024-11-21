@@ -1,65 +1,33 @@
-# Ex.No:1a  			Study of Socket Programming
-## NAME : ARAVINDAN D
-## REGISTER NUMBER : 212223240012
+# Ex.No:2		  STUDY OF SOCKET PROGRAMMING AND CLIENT – SERVER MODE
 ## Aim: 
-To perform a study on Socket Programming
-## Introduction:
-
- 	Socket programming is a crucial aspect of network communication, allowing for data exchange between computers over a network. It forms the backbone of various networked applications, enabling communication between clients and servers. This study explores the fundamental concepts of socket programming, its use cases, and provides a practical example to demonstrate its implementation.
-## Understanding Socket Programming:
-	Socket programming involves the use of sockets, which serve as endpoints for communication. A socket is identified by an IP address and a port number, and it facilitates data transfer between a client and a server. The two main types of sockets are Stream Sockets, which provide a reliable, connection-oriented communication, and Datagram Sockets, which are connectionless and suitable for scenarios where reliability is less critical.
-## Key Concepts in Socket Programming:
-1.Sockets
-•	A socket is a software representation of a communication endpoint in a network.
-•	It is identified by an IP address and a port number.
-•	Sockets can be classified into two main types: Stream Sockets and Datagram Sockets.
-•	Stream Sockets provide a reliable, connection-oriented communication, while Datagram Sockets are connectionless and operate in a best-effort mode.
-
-2. Client-Server Model
-
-•	Socket programming typically follows the client-server model.
-•	The server listens for incoming connections from clients, while clients initiate connections to the server.
-•	Servers are passive, waiting for connection requests, and clients are active, initiating communication.
-
-3, TCP/IP Protocol:
-
-•	Transmission Control Protocol (TCP) and Internet Protocol (IP) are the foundational protocols for socket programming.
-•	TCP provides reliable, connection-oriented communication, ensuring data integrity and order.
-•	IP facilitates the routing of data between devices in a network.
-
-4.Basic Socket Functions:
-
-•	Socket programming involves a set of functions provided by the operating system or programming language to create, bind, listen, accept, connect, send, and receive data through sockets.
-•	Examples of functions include socket(), bind(), listen(), accept(), connect(), send(), and recv().
-
-## Server-Side Operations:
-
-•	Servers create a socket using socket() and bind it to a specific IP address and port using bind().
-•	They then listen for incoming connections with listen() and accept connections with accept().
-•	Once a connection is establi
-•	shed, servers can send and receive data using send() and recv().
-
-## Client –Server Operations
-
-Clients create a socket using socket() and connect to a server using connect().
-After establishing a connection, clients can send and receive data using send() and recv().
-
-## Use Cases of Socket Programming:
-Socket programming finds applications in various domains, including web development, file transfer protocols, online gaming, and real-time communication. It is the foundation for protocols like HTTP, FTP, and SMTP, which power the internet. Socket programming enables the development of both server and client applications, facilitating the exchange of information between devices in a networked environment.
-## Example Use Cases:
-
-1.	Web servers: Web servers use socket programming to handle incoming HTTP requests from clients, serving web pages and content.
-2.	Chat Application: Instant messaging and chat applications use sockets to enable real-time communication between users.
-3.	File Transfer Protocol: Protocols like FTP (File Transfer Protocol) utilize socket programming for transferring files between a client and a server.
-4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
-5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
+To implement socket programming date and time display from client to 
+server using TCP Sockets 
+## Algorithm : 
+## Server: 
+1. Create a server socket and bind it to port. 
+2. Listen for new connection and when a connection arrives, accept it. 
+3. Send server‟s date and time to the client. 
+4. Read client‟s IP address sent by the client. 
+5. Display the client details. 
+6. Repeat steps 2-5 until the server is terminated. 
+7. Close all streams. 
+8. Close the server socket. 
+9. Stop. 
+## Client: 
+1. Create a client socket and connect it to the server‟s port number. 
+2. Retrieve its own IP address using built-in function. 
+3. Send its address to the server. 
+4. Display the date & time sent by the server. 
+5. Close the input and output streams. 
+6. Close the client socket. 
+7. Stop.
 ## Program
-Client : 
+## Client : 
 ```
 import socket
 from datetime import datetime
 s=socket.socket()
-s.bind(('localhost',8002))
+s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
 print("Client Address : ",addr)
@@ -70,21 +38,22 @@ if ack:
     print(ack)
     c.close()
 ```
-Server :
+## Server :
 ```
 import socket
 s=socket.socket()
-s.connect(('localhost',8002))
+s.connect(('localhost',8000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
 ```
 ## OUTPUT:
 CLIENT:
-![Screenshot 2024-04-10 184802](https://github.com/c-sanjay/SocketStudy/assets/147139405/e97e6fad-4ae5-4d73-a7e6-5a529483e828)
+![Screenshot 2024-11-21 180817](https://github.com/user-attachments/assets/9a13344d-a883-4b9c-ae1f-6f5661f4d72d)
 
 SERVER:
-![Screenshot 2024-04-10 184818](https://github.com/c-sanjay/SocketStudy/assets/147139405/3554acd1-e4d0-447b-b0d1-8a94ffe87cc0)
+![Screenshot 2024-11-21 180835](https://github.com/user-attachments/assets/b55178a3-7e1f-4a92-b214-d3616787300e)
 
 ## Result:
-Thus the study of Socket Programming Completed Successfully.
+Thus, the program to implement socket programming date and time display from client to 
+server using TCP Sockets was successfully executed. 
